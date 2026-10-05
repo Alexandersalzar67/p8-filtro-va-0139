@@ -1,0 +1,36 @@
+#Alexander Salazar 0139
+import cv2
+# Cargar la imagen
+imagen = cv2.imread("imagenes/canario.JPG")
+
+# Verificar que la imagen se haya cargado
+if imagen is None:
+    print("No se pudo cargar la imagen.")
+    exit()
+
+# Aplicar filtro de mediana
+imagen_filtrada = cv2.medianBlur(
+    imagen,
+    5
+)
+
+# Mostrar imágenes
+cv2.imshow("imagen original 0139", imagen)
+cv2.imshow("Imagen con filtro de mediana 0139", imagen_filtrada)
+
+# Guardar resultado
+cv2.imwrite(
+    "resultados/canario.JPG",
+    imagen_filtrada
+)
+
+print("Filtro de mediana aplicado correctamente.")
+print("Resultado guardado en:")
+print("resultados/canario.JPG")
+
+# Esperar una tecla
+cv2.waitKey(0)
+
+# Cerrar ventanas
+cv2.destroyAllWindows()
+print("Alexander Salazar 0139")
